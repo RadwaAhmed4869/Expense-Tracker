@@ -4,6 +4,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import ExpensesChart from "./ExpensesChart";
 import ExpensesList from "./ExpensesList";
 import Card from "../UI/Card";
+import ExportButton from "../Buttons/ExportButton"
 import "./Expenses.css";
 
 const Expenses = (props) => {
@@ -25,6 +26,7 @@ const Expenses = (props) => {
       />
       <ExpensesChart expenses={filteredExpenses}/>
       <ExpensesList list={filteredExpenses} />
+      <ExportButton data={filteredExpenses}/>
     </Card>
   );
 };

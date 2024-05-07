@@ -6,9 +6,9 @@ import Expenses from "./components/Expenses/Expenses";
 const dummyExpenses = [
   {
     id: "e1",
-    title: "Car Insurance",
+    title: "Car Maintenance",
     amount: 450,
-    date: new Date(2021, 2, 15),
+    date: new Date(2021, 4, 15),
   },
   {
     id: "e2",
@@ -20,13 +20,37 @@ const dummyExpenses = [
     id: "e3",
     title: "Peanut Butter",
     amount: 280,
-    date: new Date(2024, 4, 8),
+    date: new Date(2024, 3, 10),
   },
   {
     id: "e4",
     title: "Mobile",
     amount: 14000,
     date: new Date(2023, 11, 10),
+  },
+  {
+    id: "e5",
+    title: "Groceries",
+    amount: 120,
+    date: new Date(2024, 2, 18),
+  },
+  {
+    id: "e6",
+    title: "Shoes",
+    amount: 600,
+    date: new Date(2024, 1, 22),
+  },
+  {
+    id: "e7",
+    title: "Shampoo",
+    amount: 80,
+    date: new Date(2024, 0, 4),
+  },
+  {
+    id: "e8",
+    title: "Swimming Gears",
+    amount: 240,
+    date: new Date(2024, 0, 15),
   },
 ];
 
