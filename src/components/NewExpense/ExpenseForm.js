@@ -6,6 +6,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setTitle] = useState("");
   const [enteredAmount, setAmount] = useState("");
   const [enteredDate, setDate] = useState("");
+  const [enteredCategory, setCategory] = useState("");
 
   // const [userInput, setUserInput] = useState({
   //   title: "",
@@ -44,6 +45,10 @@ const ExpenseForm = (props) => {
     // });
   };
 
+  const categoryChangeHandler = (event) => {
+    setCategory(event.target.value);
+  };
+
   const sumbitHandeler = (event) => {
     event.preventDefault();
 
@@ -51,6 +56,7 @@ const ExpenseForm = (props) => {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
+      category: enteredCategory,
     };
 
     // console.log(expenseData);
@@ -92,9 +98,21 @@ const ExpenseForm = (props) => {
             onChange={dateChangeHandler}
           />
         </div>
+        <div className="new-expense__control">
+          <label>Category</label>
+          <select value={props.selected} onChange={categoryChangeHandler}>
+            <option value="food">Food</option>
+            <option value="health">Health</option>
+            <option value="clothes">Clothes</option>
+            <option value="hobby">Hobby</option>
+            <option value="electronics">Electronics</option>
+          </select>
+        </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={props.onCancel}>Cancel</button>
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
