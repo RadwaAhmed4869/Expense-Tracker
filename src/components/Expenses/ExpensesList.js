@@ -12,11 +12,12 @@ const ExpensesList = (props) => {
     <ul className="expenses-list">
       {props.list.map((expense) => (
         <ExpenseItem
-          key={expense.id}
+          id={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
           category={expense.category}
+          onDelete={props.onDeleteExpense}
         />
       ))}
     </ul>

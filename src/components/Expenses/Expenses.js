@@ -25,7 +25,7 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
       />
       <ExpensesChart expenses={filteredExpenses}/>
-      <ExpensesList list={filteredExpenses} />
+      <ExpensesList list={filteredExpenses} onDeleteExpense={props.onRenewExpenses}/>
       <ExportButton data={filteredExpenses}/>
     </Card>
   );

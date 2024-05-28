@@ -64,10 +64,15 @@ const App = () => {
     });
   };
 
+  const renewExpenseHandler = (id) => {
+    const renewedExpenses = expenses.filter((expense) => expense.id !== id);
+    setExpenses(renewedExpenses);
+  }
+
   return (
     <div>
       <NewExpense onAddNewExpense={addNewExpenseHandeler} />
-      <Expenses items={expenses} />
+      <Expenses items={expenses} onRenewExpenses={renewExpenseHandler}/>
     </div>
   );
 };
