@@ -5,7 +5,7 @@ import "./ExportButton.css";
 
 const ExportButton = (props) => {
   return <div className="csv-button">
-    <CSVLink data={props.data} filename={"year-report.csv"}>Download Year Report</CSVLink>
+    <CSVLink className="csv-link" data={props.data} filename={"year-report.csv"}>Download Year Report</CSVLink>
   </div>
 };
 

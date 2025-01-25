@@ -5,5 +5,12 @@
   background-color: #FBE9B1;
   color: #313131;
   border-radius: 12px;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
+  text-align: center;
+  align-self: center;
+}
+
+.csv-link {
+  text-decoration: none;
+  color: black;
 }
