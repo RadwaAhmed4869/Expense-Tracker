@@ -1,0 +1,55 @@
+.reward-toast__stack {
+  position: fixed;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.reward-toast {
+  min-width: 14rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: reward-toast-in 0.25s ease-out, reward-toast-out 0.3s ease-in 3.7s forwards;
+}
+
+.reward-toast p {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+}
+
+.reward-toast--levelup {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.reward-toast--badge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.reward-toast--quest {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+@keyframes reward-toast-in {
+  from {
+    transform: translateX(1.5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes reward-toast-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

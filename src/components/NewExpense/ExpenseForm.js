@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { EXPENSE_CATEGORIES } from "../../utils/questDefinitions";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  const { t } = useLanguage();
   const [enteredTitle, setTitle] = useState("");
   const [enteredAmount, setAmount] = useState("");
   const [enteredDate, setDate] = useState("");
@@ -54,7 +57,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: parseFloat(enteredAmount),
       date: new Date(enteredDate),
       category: enteredCategory,
     };
@@ -71,7 +74,7 @@ const ExpenseForm = (props) => {
     <form onSubmit={sumbitHandeler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label>Title</label>
+          <label>{t("titleLabel")}</label>
           <input
             type="text"
             value={enteredTitle}
@@ -79,7 +82,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__control">
-          <label>Amount</label>
+          <label>{t("amountLabel")}</label>
           <input
             type="number"
             min="0.01"
@@ -89,31 +92,31 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__control">
-          <label>Date</label>
+          <label>{t("dateLabel")}</label>
           <input
             type="date"
             min="2019-01-01"
-            max="2025-12-31"
+            max={new Date().toISOString().slice(0, 10)}
             value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
         <div className="new-expense__control">
-          <label>Category</label>
+          <label>{t("categoryLabel")}</label>
           <select value={props.selected} onChange={categoryChangeHandler}>
-            <option value="food">Food</option>
-            <option value="health">Health</option>
-            <option value="clothes">Clothes</option>
-            <option value="hobby">Hobby</option>
-            <option value="electronics">Electronics</option>
+            {EXPENSE_CATEGORIES.map((option) => (
+              <option key={option} value={option}>
+                {t(`category.${option}`)}
+              </option>
+            ))}
           </select>
         </div>
       </div>
       <div className="new-expense__actions">
         <button type="button" onClick={props.onCancel}>
-          Cancel
+          {t("cancel")}
         </button>
-        <button type="submit">Add Expense</button>
+        <button type="submit">{t("addExpense")}</button>
       </div>
     </form>
   );

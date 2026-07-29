@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { useLanguage } from "../../context/LanguageContext";
 import "./ExpenseDate.css";
 
 const ExpenseDate = (props) => {
-  const month = props.date.toLocaleString("en-US", { month: "long" });
-  //   const year = props.date.toLocaleString("en-US", { year: "numeric" });
+  const { language } = useLanguage();
+  const locale = language === "ar" ? "ar-EG" : "en-US";
+  const month = props.date.toLocaleString(locale, { month: "long" });
   const year = props.date.getFullYear();
-  //   const day = props.date.toLocaleString("en-US", { day: "numeric" });
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
 
   return (

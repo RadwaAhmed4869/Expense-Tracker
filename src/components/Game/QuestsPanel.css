@@ -1,0 +1,63 @@
+.quests-panel {
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 30rem;
+}
+
+.quests-panel h2 {
+  margin-top: 0;
+}
+
+.quests-panel__empty {
+  color: var(--color-text-muted);
+}
+
+.quests-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quests-panel__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.quests-panel__title {
+  font-weight: bold;
+}
+
+.quests-panel__reward {
+  font-size: 0.8rem;
+  color: #6366f1;
+}
+
+.quests-panel__description {
+  margin: 0.25rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.quests-panel__track {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-track-bg);
+  overflow: hidden;
+}
+
+.quests-panel__fill {
+  height: 100%;
+  background: #22c55e;
+  transition: width 0.3s ease;
+}
+
+.quests-panel__progress {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}

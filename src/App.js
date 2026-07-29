@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
+import GameBar from "./components/Game/GameBar";
+import QuestsPanel from "./components/Game/QuestsPanel";
+import BadgesShelf from "./components/Game/BadgesShelf";
+import BudgetSettings from "./components/Game/BudgetSettings";
+import RewardToast from "./components/Game/RewardToast";
+import SettingsBar from "./components/UI/SettingsBar";
+import { useGame } from "./context/GameContext";
 
 const dummyExpenses = [
   {
@@ -56,12 +63,17 @@ const dummyExpenses = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(dummyExpenses);
+  const { dispatch } = useGame();
+
+  useEffect(() => {
+    dispatch({ type: "REFRESH_QUESTS", payload: { allExpenses: expenses } });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const addNewExpenseHandeler = (newExpense) => {
-    // console.log(newExpense);
-    setExpenses((prevState) => {
-      return [newExpense, ...expenses];
-    });
+    const updatedExpenses = [newExpense, ...expenses];
+    setExpenses(updatedExpenses);
+    dispatch({ type: "EXPENSE_LOGGED", payload: { allExpenses: updatedExpenses } });
   };
 
   const renewExpenseHandler = (id) => {
@@ -71,7 +83,13 @@ const App = () => {
 
   return (
     <div>
+      <RewardToast />
+      <SettingsBar />
+      <GameBar />
       <NewExpense onAddNewExpense={addNewExpenseHandeler} />
+      <QuestsPanel />
+      <BudgetSettings />
+      <BadgesShelf />
       <Expenses items={expenses} onRenewExpenses={renewExpenseHandler}/>
     </div>
   );

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
 import ExpenseForm from "./ExpenseForm";
+import { useLanguage } from "../../context/LanguageContext";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
   const [isEditing, setIsEditing] = useState(false);
+  const { t } = useLanguage();
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: crypto.randomUUID(),
     };
 
     props.onAddNewExpense(expenseData);
@@ -27,7 +29,7 @@ const NewExpense = (props) => {
   return (
     <div className="new-expense">
       {!isEditing && (
-        <button onClick={startEditingHandler}>Add New Expense</button>
+        <button onClick={startEditingHandler}>{t("addNewExpense")}</button>
       )}
       {isEditing && (
         <ExpenseForm

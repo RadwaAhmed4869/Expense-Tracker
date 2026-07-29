@@ -1,0 +1,44 @@
+.budget-settings {
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 30rem;
+}
+
+.budget-settings h2 {
+  margin-top: 0;
+}
+
+.budget-settings__form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.budget-settings__form select,
+.budget-settings__form input {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg);
+  color: var(--color-card-text);
+}
+
+.budget-settings__form input {
+  flex: 1;
+}
+
+.budget-settings__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.budget-settings__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}

@@ -1,4 +1,7 @@
 .card {
     border-radius: 12px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 8px var(--color-shadow);
+    background-color: var(--color-card-bg);
+    color: var(--color-card-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }

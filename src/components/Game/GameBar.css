@@ -1,0 +1,53 @@
+.game-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  max-width: 30rem;
+}
+
+.game-bar__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+}
+
+.game-bar__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.game-bar__value {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.game-bar__xp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.game-bar__xp-track {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--color-track-bg);
+  overflow: hidden;
+}
+
+.game-bar__xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.game-bar__xp-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: end;
+}

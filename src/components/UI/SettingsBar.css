@@ -1,0 +1,21 @@
+.settings-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1rem 0;
+}
+
+.settings-bar__button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg);
+  color: var(--color-card-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.settings-bar__button:hover {
+  border-color: var(--color-accent);
+}

@@ -1,11 +1,13 @@
 import React from "react";
 
 import ExpenseItem from "./ExpenseItem";
+import { useLanguage } from "../../context/LanguageContext";
 import "./ExpensesList.css";
 
 const ExpensesList = (props) => {
+  const { t } = useLanguage();
   if (props.list.length === 0) {
-    return <h2 className="expenses-list__fallback">Found no expenses.</h2>;
+    return <h2 className="expenses-list__fallback">{t("foundNoExpenses")}</h2>;
   }
 
   return (

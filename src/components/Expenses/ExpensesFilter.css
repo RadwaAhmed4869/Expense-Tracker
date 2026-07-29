@@ -1,5 +1,5 @@
 .expenses-filter {
-  color: white;
+  color: var(--color-panel-dark-text);
   padding: 0 1rem;
 }
 
