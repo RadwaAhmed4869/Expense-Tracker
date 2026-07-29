@@ -2,7 +2,7 @@
 
 A gamified expense tracker: log and filter everyday expenses while earning XP, leveling up, keeping a daily streak, completing budget quests, and unlocking badges along the way.
 
-![App screenshot](docs/screenshot.png)
+![App screenshot](public/docs/screenshot.png)
 
 1. Expense Logging: Allows users to input their expenses quickly and easily.
 
