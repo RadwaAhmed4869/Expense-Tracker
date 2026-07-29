@@ -1,9 +1,13 @@
 # Expense Tracker
 
+A gamified expense tracker: log and filter everyday expenses while earning XP, leveling up, keeping a daily streak, completing budget quests, and unlocking badges along the way.
+
+![App screenshot](docs/screenshot.png)
+
 1. Expense Logging: Allows users to input their expenses quickly and easily.
 
-2. Expense Filtering: filtering by year or category for better organization.
+2. Expense Filtering: filtering by year for better organization.
 
-4. Expense Analysis: Provides spending patterns through charts.
+3. Gamification: earn XP, level up, maintain a daily streak, complete quests, and unlock badges as you track spending.
 
-5. Export Reports: Allows users to export expense reports in CSV formats for further analysis or sharing.
+4. Category Budgets: set a monthly cap per category and track spend against it with a progress bar.

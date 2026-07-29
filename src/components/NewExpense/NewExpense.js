@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ExpenseForm from "./ExpenseForm";
+import Card from "../UI/Card";
+import { AddExpenseIcon } from "../UI/icons";
 import { useLanguage } from "../../context/LanguageContext";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
-  const [isEditing, setIsEditing] = useState(false);
   const { t } = useLanguage();
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
@@ -15,29 +16,18 @@ const NewExpense = (props) => {
     };
 
     props.onAddNewExpense(expenseData);
-    setIsEditing(false);
-  };
-
-  const startEditingHandler = () => {
-    setIsEditing(true);
-  };
-
-  const stopEditingHandler = () => {
-    setIsEditing(false);
   };
 
   return (
-    <div className="new-expense">
-      {!isEditing && (
-        <button onClick={startEditingHandler}>{t("addNewExpense")}</button>
-      )}
-      {isEditing && (
-        <ExpenseForm
-          onSaveExpenseData={saveExpenseDataHandler}
-          onCancel={stopEditingHandler}
-        />
-      )}
-    </div>
+    <Card className="new-expense" data-tour="add-expense-button">
+      <h2 className="panel-title">
+        <AddExpenseIcon />
+        {t("addExpense")}
+      </h2>
+      <div className="new-expense__body">
+        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      </div>
+    </Card>
   );
 };
 

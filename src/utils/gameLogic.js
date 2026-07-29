@@ -25,12 +25,12 @@ const getISOWeekStart = (date) => {
   return d;
 };
 
-const getMonthStart = (date) => {
+export const getMonthStart = (date) => {
   const d = new Date(date);
   return new Date(d.getFullYear(), d.getMonth(), 1);
 };
 
-const getMonthEnd = (date) => {
+export const getMonthEnd = (date) => {
   const d = new Date(date);
   return new Date(d.getFullYear(), d.getMonth() + 1, 1);
 };
@@ -107,6 +107,11 @@ export const computeQuestProgress = (quest, expenses, today = new Date()) => {
       return 0;
   }
 };
+
+export const computeCategorySpend = (expenses, category, periodStart, periodEnd) =>
+  expenses
+    .filter((expense) => expense.category === category && isInPeriod(expense, periodStart, periodEnd))
+    .reduce((total, expense) => total + (Number(expense.amount) || 0), 0);
 
 // ---- Quest generation ----
 

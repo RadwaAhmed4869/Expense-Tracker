@@ -5,12 +5,20 @@ import { computeStreakFromHistory, evaluateBadges, getLevelFromXP, refreshQuests
 
 const GameContext = createContext(null);
 
+const MOCK_XP = 220;
+
 const initialGameState = {
-  xp: 0,
-  level: 1,
-  streakCount: 0,
-  unlockedBadgeIds: [],
-  budgets: [],
+  xp: MOCK_XP,
+  level: getLevelFromXP(MOCK_XP),
+  streakCount: 4,
+  unlockedBadgeIds: ["first-expense", "streak-3"],
+  budgets: [
+    { id: crypto.randomUUID(), category: "food", monthlyCap: 500 },
+    { id: crypto.randomUUID(), category: "health", monthlyCap: 150 },
+    { id: crypto.randomUUID(), category: "clothes", monthlyCap: 200 },
+    { id: crypto.randomUUID(), category: "hobby", monthlyCap: 100 },
+    { id: crypto.randomUUID(), category: "electronics", monthlyCap: 300 },
+  ],
   quests: [],
   pendingToasts: [],
 };

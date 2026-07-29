@@ -1,11 +1,22 @@
 .budget-settings {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
-  margin: 1rem auto;
-  max-width: 30rem;
+  margin: 0;
+  max-width: none;
 }
 
 .budget-settings h2 {
   margin-top: 0;
+  flex: 0 0 auto;
+}
+
+.budget-settings__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .budget-settings__form {
@@ -27,18 +38,88 @@
   flex: 1;
 }
 
+.budget-settings__form button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.4rem 1.25rem;
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 12px;
+}
+
+.budget-settings__form button:hover,
+.budget-settings__form button:active {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
 .budget-settings__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .budget-settings__item {
   display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.budget-settings__item-header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+}
+
+.budget-settings__label {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.budget-settings__track {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-track-bg);
+  overflow: hidden;
+}
+
+.budget-settings__fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.budget-settings__progress {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.budget-settings__remove {
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 1.2rem;
+  width: 1.2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.budget-settings__remove svg {
+  height: 100%;
+  width: 100%;
+}
+
+.budget-settings__dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-inline-end: 0.4rem;
 }

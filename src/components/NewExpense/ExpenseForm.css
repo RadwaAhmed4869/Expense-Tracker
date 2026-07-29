@@ -6,6 +6,10 @@
   text-align: start;
 }
 
+.new-expense__control {
+  flex: 1 1 10rem;
+}
+
 .new-expense__control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -17,14 +21,13 @@
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid var(--color-border);
-  width: 20rem;
-  max-width: 100%;
+  width: 100%;
 }
 
 .new-expense select {
   font: inherit;
   padding: 0.5rem;
-  width: 20rem;
+  width: 100%;
   border-radius: 6px;
   border: 1px solid var(--color-border);
   text-align: start;
@@ -32,4 +35,8 @@
 
 .new-expense__actions {
   text-align: end;
+}
+
+.new-expense__actions button {
+  width: 100%;
 }

@@ -1,6 +1,6 @@
 .reward-toast__stack {
   position: fixed;
-  top: 1rem;
+  top: 3.5rem;
   inset-inline-end: 1rem;
   display: flex;
   flex-direction: column;

@@ -6,6 +6,14 @@ export const QUEST_TYPES = {
 
 export const EXPENSE_CATEGORIES = ["food", "health", "clothes", "hobby", "electronics"];
 
+export const CATEGORY_COLOR_VARS = {
+  food: "--color-category-food",
+  health: "--color-category-health",
+  clothes: "--color-category-clothes",
+  hobby: "--color-category-hobby",
+  electronics: "--color-category-electronics",
+};
+
 export const questTemplates = [
   {
     type: QUEST_TYPES.LOG_COUNT,

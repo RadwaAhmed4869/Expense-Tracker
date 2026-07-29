@@ -5,3 +5,9 @@
     color: var(--color-card-text);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

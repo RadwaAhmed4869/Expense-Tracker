@@ -36,10 +36,16 @@
 }
 
 .delete-icon{
+  display: inline-flex;
   height: 1.2rem;
   width: 1.2rem;
   margin: 0 1rem;
   color: var(--color-panel-dark-text-secondary);
+}
+
+.delete-icon svg {
+  height: 100%;
+  width: 100%;
 }
 
 .delete-icon:hover{

@@ -3,6 +3,11 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import "./ExpensesFilter.css";
 
+export const ALL_YEARS = "all";
+
+const CURRENT_YEAR = new Date().getFullYear();
+const SELECTABLE_YEARS = [0, 1, 2, 3, 4].map((offset) => CURRENT_YEAR - offset);
+
 const ExpensesFilter = (props) => {
   const { t } = useLanguage();
   const dropdownChangeHandler = (event) => {
@@ -10,16 +15,14 @@ const ExpensesFilter = (props) => {
   };
   return (
     <div className="expenses-filter">
-      <div className="expenses-filter__control">
-        <label>{t("filterByYear")}</label>
-        <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-        </select>
-      </div>
+      <select value={props.selected} onChange={dropdownChangeHandler} aria-label={t("filterByYear")}>
+        <option value={ALL_YEARS}>{t("allYears")}</option>
+        {SELECTABLE_YEARS.map((year) => (
+          <option key={year} value={year.toString()}>
+            {year}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

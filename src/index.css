@@ -23,6 +23,11 @@
   --color-card-text: #f3f4f6;
   --color-text-muted: #9ca3af;
   --color-track-bg: #4b5563;
+  --color-category-food: #f59e0b;
+  --color-category-health: #22c55e;
+  --color-category-clothes: #8b5cf6;
+  --color-category-hobby: #ec4899;
+  --color-category-electronics: #3b82f6;
 }
 
 :root[data-theme="light"] {
@@ -44,6 +49,11 @@
   --color-card-text: #1f2937;
   --color-text-muted: #6b7280;
   --color-track-bg: #e5e7eb;
+  --color-category-food: #d97706;
+  --color-category-health: #16a34a;
+  --color-category-clothes: #7c3aed;
+  --color-category-hobby: #db2777;
+  --color-category-electronics: #2563eb;
 }
 
 html {

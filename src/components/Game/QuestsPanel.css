@@ -1,11 +1,22 @@
 .quests-panel {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
-  margin: 1rem auto;
-  max-width: 30rem;
+  margin: 0;
+  max-width: none;
 }
 
 .quests-panel h2 {
   margin-top: 0;
+  flex: 0 0 auto;
+}
+
+.quests-panel__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .quests-panel__empty {
@@ -24,16 +35,31 @@
 .quests-panel__item-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
 .quests-panel__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: bold;
 }
 
+.quests-panel__item-icon {
+  display: inline-flex;
+  color: var(--color-text-muted);
+}
+
 .quests-panel__reward {
-  font-size: 0.8rem;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: bold;
   color: #6366f1;
+  background: rgba(99, 102, 241, 0.12);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
 }
 
 .quests-panel__description {
